@@ -3,13 +3,13 @@ package personnages;
 public class Chef {
 	private String nom;
 	private int force;
-	private int effetPotion = 1;
+	private int effetPotion = 0;
 	private Village village;
 	
-	public Chef(String nom, int force, Village village) {
+	public Chef(String nom, int force, Village village, int effetPotion) {
 		this.nom = nom;
 		this.force = force;
-		this.effetPotion = effetPotion;
+		this.setEffetPotion(effetPotion);
 		this.village = village;
 	}
 	
@@ -26,11 +26,16 @@ public class Chef {
 	}
 	
 	public void frapper(Romain romain) {
-		return "Le chef " + nom + " du village " + village.getNom() + " : ";
-	}
-	
-	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		romain.recevoirCoup(force / 3)
+		romain.recevoirCoup(force / 3);
+		
+	}
+
+	public int getEffetPotion() {
+		return effetPotion;
+	}
+
+	public void setEffetPotion(int effetPotion) {
+		this.effetPotion = effetPotion;
 	}
 }
