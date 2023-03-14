@@ -12,7 +12,6 @@ public class Scenario {
 		minus.parler("UN GAU... UN GAUGAU...");
 		asterix.frapper(minus);
 		asterix.frapper(minus);
-		asterix.frapper(minus);
 	}
 
 }
