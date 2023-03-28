@@ -1,6 +1,5 @@
 package personnages;
 
-import java.util.Iterator;
 
 public class Village {
 	private String nom;
@@ -34,7 +33,7 @@ public class Village {
 	public void afficherVillageois() {
 		System.out.println("Dans le village du chef " + chef.getNom() + " vivent les légenfaires gaulois :");
 		for (int i = 0; i < nbVillageois; i++) {
-			System.out.println("- " + villageois[i].getNom());
+			System.out.println("- " + trouverHabitant(i).getNom());
 		}
 		
 	}
