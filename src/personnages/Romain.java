@@ -5,6 +5,7 @@ public class Romain {
 	private int force;
 	private Equipement equipements[] = new Equipement[2];
 	private int nbEquipement = 0;
+	private String texte;
 
 	public Romain(String nom, int force) {
 		assert force > 0;
@@ -56,8 +57,36 @@ public class Romain {
 			break;
 		default:
 			equiperEquip(equipement);
+			break;
 		}
 	}
+	
+	public Equipement[] recevoirCoup(int forceCoup) {
+		Equipement[] equipementEjecte = null;
+		// précondition
+		assert force > 0;
+		int oldForce = force;
+		forceCoup = CalculResistanceEquipement(forceCoup);
+		force -= forceCoup;
+		if (force > 0) {
+			parler("Aïe");
+		} else {
+			equipementEjecte = ejecterEquipement();
+			parler("J'abandonne...");
+		}
+		switch (force) {
+		case 0:
+			parler("Aïe");
+		default:
+			equipementEjecte = ejecterEquipement();
+			parler("J'abandonne...");
+			break;
+			}
+			// post condition la force a diminuée
+			assert force < oldForce;
+			return equipementEjecte;
+		}
+
 
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
