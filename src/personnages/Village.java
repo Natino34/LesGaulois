@@ -31,7 +31,7 @@ public class Village {
 	}
 	
 	public void afficherVillageois() {
-		System.out.println("Dans le village du chef " + chef.getNom() + " vivent les légenfaires gaulois :");
+		System.out.println("Dans le village du chef " + chef.getNom() + " vivent les lÃ©gendaires gaulois :");
 		for (int i = 0; i < nbVillageois; i++) {
 			System.out.println("- " + trouverHabitant(i).getNom());
 		}
@@ -40,7 +40,7 @@ public class Village {
 	
 	
 	public static void main(String[] args) {
-		Village village = new Village("Village des Irréductibles",30);
+		Village village = new Village("Village des Irrï¿½ductibles",30);
 //		Gaulois gaulois = village.trouverHabitant(30);
 //      indice trop grand
 		Chef abraracourcix = new Chef("Abraracourcix",6,village);
@@ -49,9 +49,9 @@ public class Village {
 		village.ajouterHabitant(asterix);
 //		Gaulois gaulois = village.trouverHabitant(1);
 //		System.out.println(gaulois);
-//		réponse "null" car aucun gaulois n'est à l'indice 1, asterix est à l'indice 0
+//		rï¿½ponse "null" car aucun gaulois n'est ï¿½ l'indice 1, asterix est Ã  l'indice 0
 		village.afficherVillageois();
-		Gaulois obelix = new Gaulois("Obélix", 25);
+		Gaulois obelix = new Gaulois("ObÃ©lix", 25);
 		village.ajouterHabitant(obelix);
 		village.afficherVillageois();
 	}
